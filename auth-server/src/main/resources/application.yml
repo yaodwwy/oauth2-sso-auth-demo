@@ -1,0 +1,23 @@
+server:
+  port: 80
+  servlet:
+    context-path: /auth-server
+spring:
+  application:
+    name: auth-server
+  h2:
+    console:
+      path: /h2-console
+      enabled: true
+      settings:
+        web-allow-others: true
+  datasource:
+    schema: classpath:schema.sql
+  # spring boot h2 的默认连接池是 hikari 连接地址是 h2:mem:testdb 用户名是sa 可以通过/h2-console地址查看数据
+  session:
+    store-type: redis
+  #redis.host: 默认是本机
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: validate

@@ -1,0 +1,22 @@
+server:
+  port: 8082
+  servlet:
+    context-path: /sso-client-b
+# sso　认证配置
+oauth2-server: http://localhost:80/auth-server
+
+security:
+  oauth2:
+    client:
+      client-id: sso-client-b
+      client-secret: test
+      access-token-uri: ${oauth2-server}/oauth/token
+      user-authorization-uri: ${oauth2-server}/oauth/authorize
+    resource:
+      jwt:
+        key-uri: ${oauth2-server}/oauth/token_key
+        key-value: RSA-key
+
+spring:
+  thymeleaf:
+    cache: false
