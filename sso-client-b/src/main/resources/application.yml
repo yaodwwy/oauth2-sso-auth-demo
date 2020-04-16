@@ -17,8 +17,6 @@ security:
       jwt:
         key-uri: ${oauth2-server}/oauth/token_key
         key-value: RSA-key
-    sso:
-      login-path: /user
 
 spring:
   thymeleaf:

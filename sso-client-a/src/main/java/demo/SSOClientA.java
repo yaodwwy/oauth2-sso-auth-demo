@@ -17,10 +17,10 @@ public class SSOClientA {
         SpringApplication.run(SSOClientA.class, args);
     }
 
-    @RequestMapping({"/"})
-    public String main() {
-        return "index";
-    }
+//    @RequestMapping({"/"})
+//    public String main() {
+//        return "index";
+//    }
 
     @ResponseBody
     @RequestMapping("/user")

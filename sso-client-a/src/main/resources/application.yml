@@ -14,14 +14,10 @@ security:
       client-secret: test
       access-token-uri: ${oauth2-server}/oauth/token
       user-authorization-uri: ${oauth2-server}/oauth/authorize
-      registered-redirect-uri:
-        - "http://localhost:8081/sso-client-a"
     resource:
       jwt:
         key-uri: ${oauth2-server}/oauth/token_key
         key-value: RSA-key
-    sso:
-      login-path: /user
 
 spring:
   thymeleaf:
