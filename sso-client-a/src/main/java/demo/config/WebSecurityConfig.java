@@ -11,30 +11,18 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 @EnableOAuth2Sso
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
-    //    @Value("${oauth2-server}")
-//    private String oauth2Server;
-//
-//    private static final String[] IGNORES = {
-//            "/oauth/**", "/favicon.ico","/login"
-//    };
-//
-//    @Override
-//    public void configure(WebSecurity web) {
-//        web.ignoring().antMatchers("/bootstrap/**");
-//    }
-//
+    private static final String[] IGNORES = {
+            "/favicon.ico", "/bootstrap/**", "/static/**", "/css/**", "/images/**"
+    };
+
+    @Override
+    public void configure(WebSecurity web) {
+        web.ignoring().antMatchers(IGNORES);
+    }
+
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests().anyRequest().authenticated()
-                .and()
-                .httpBasic();
-        // http.authorizeRequests().mvcMatchers("/login").permitAll().anyRequest().permitAll();
-
-//        http.logout().logoutSuccessUrl(oauth2Server + "/logout")
-//                .and()
-//                .authorizeRequests()
-//                .anyRequest().authenticated()
-//                .and()
-//                .csrf().disable();
+                .and().httpBasic();
     }
 }

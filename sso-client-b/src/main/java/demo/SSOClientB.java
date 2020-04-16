@@ -16,7 +16,7 @@ public class SSOClientB {
         SpringApplication.run(SSOClientB.class, args);
     }
 
-    @RequestMapping({"/", "/login"})
+    @RequestMapping({"/"})
     public String main() {
         return "index";
     }

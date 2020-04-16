@@ -1,9 +1,10 @@
 server:
   port: 8082
+  # @see https://stackoverflow.com/questions/40775533/spring-sso-authorization-fails-without-context-path/40827993
   servlet:
     context-path: /sso-client-b
 # sso　认证配置
-oauth2-server: http://localhost:80/auth-server
+oauth2-server: http://localhost:80
 
 security:
   oauth2:
@@ -16,6 +17,8 @@ security:
       jwt:
         key-uri: ${oauth2-server}/oauth/token_key
         key-value: RSA-key
+    sso:
+      login-path: /user
 
 spring:
   thymeleaf:

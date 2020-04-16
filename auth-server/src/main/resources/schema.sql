@@ -20,10 +20,10 @@ VALUES ('baidu', NULL, '$2a$10$HFwz2cSmd2wEwPF6OEbRGOwkbYK1KRQUpkxS/hYaedVuCq56W
         'authorization_code,refresh_token', 'http://baidu.com', NULL, NULL, 'true', 7200, NULL);
 INSERT INTO oauth_client_details
 VALUES ('sso-client-a', NULL, '$2a$10$HFwz2cSmd2wEwPF6OEbRGOwkbYK1KRQUpkxS/hYaedVuCq56Wux4S', 'all',
-        'authorization_code,refresh_token', 'http://localhost:8081/sso-client-a/login', NULL, NULL, 'true', 7200, NULL);
+        'authorization_code,refresh_token', 'http://localhost:8081/sso-client-a/user,http://localhost:8080/cloud/login,http://localhost:8080/cloud/main', NULL, NULL, 'true', 7200, NULL);
 INSERT INTO oauth_client_details
 VALUES ('sso-client-b', NULL, '$2a$10$HFwz2cSmd2wEwPF6OEbRGOwkbYK1KRQUpkxS/hYaedVuCq56Wux4S', 'all',
-        'authorization_code,refresh_token', 'http://localhost:8082/sso-client-b/login', NULL, NULL, 'true', 7200, NULL);
+        'authorization_code,refresh_token', 'http://localhost:8082/sso-client-b/user', NULL, NULL, 'true', 7200, NULL);
 
 ---------------- 用户 -----------
 -- 参考： org.springframework.security.core.userdetails.User

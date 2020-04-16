@@ -1,7 +1,5 @@
 server:
   port: 80
-  servlet:
-    context-path: /auth-server
 spring:
   application:
     name: auth-server
