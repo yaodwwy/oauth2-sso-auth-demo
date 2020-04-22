@@ -11,7 +11,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     private static final String[] IGNORES = {
-            "/favicon.ico", "/bootstrap/**", "/static/**", "/css/**", "/images/**"
+            "/favicon.ico", "/bootstrap/**", "/static/**", "/css/**", "/images/**","/error**"
     };
 
     @Override
