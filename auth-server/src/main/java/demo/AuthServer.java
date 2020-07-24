@@ -13,7 +13,6 @@ import java.security.Principal;
 public class AuthServer {
 
     public static void main(String[] args) {
-        HostConfig.updateHost("127.0.0.1","auth-server");
         SpringApplication.run(AuthServer.class, args);
     }
 
