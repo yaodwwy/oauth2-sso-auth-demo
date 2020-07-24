@@ -13,6 +13,7 @@ import java.security.Principal;
 public class SSOClientB {
 
     public static void main(String[] args) {
+        HostConfig.updateHost("127.0.0.1","sso-client-b");
         SpringApplication.run(SSOClientB.class, args);
     }
 
