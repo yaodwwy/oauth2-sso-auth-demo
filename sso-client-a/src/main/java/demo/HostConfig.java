@@ -1,15 +1,43 @@
 package demo;
 
 
+import lombok.SneakyThrows;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.StringUtils;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
 public class HostConfig {
+
+    @SneakyThrows
+    public static void checkHostExists(String ip, String host) {
+
+        Runtime runtime = Runtime.getRuntime();
+        Process pro = runtime.exec("ping " + host);
+        int status = pro.waitFor();
+        if (status != 0) {
+            System.out.println("Failed to call shell's command ");
+        }
+
+        BufferedReader br = new BufferedReader(new InputStreamReader(pro.getInputStream(), "GBK"));
+        StringBuffer strbr = new StringBuffer();
+        String line;
+        while ((line = br.readLine()) != null) {
+            if (line.contains(ip)) {
+                return;
+            }
+            strbr.append(line).append("\n");
+        }
+        String result = strbr.toString();
+        System.out.println(result);
+        throw new Exception("Sever host: "+ host +" mapping to "+ ip +" not exist!");
+    }
+
     /**
      * 获取host文件路径
      *

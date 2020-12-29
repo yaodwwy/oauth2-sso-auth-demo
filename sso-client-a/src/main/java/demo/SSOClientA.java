@@ -14,14 +14,14 @@ import java.security.Principal;
 public class SSOClientA {
 
     public static void main(String[] args) {
-        HostConfig.updateHost("127.0.0.1","sso-client-a");
+        HostConfig.checkHostExists("127.0.0.1", "sso-client-a");
         SpringApplication.run(SSOClientA.class, args);
     }
 
-//    @RequestMapping({"/"})
-//    public String main() {
-//        return "index";
-//    }
+    @RequestMapping({"/"})
+    public String main() {
+        return "index";
+    }
 
     @ResponseBody
     @RequestMapping("/user")

@@ -2,6 +2,8 @@ server:
   port: 8081
   # @see https://stackoverflow.com/questions/40775533/spring-sso-authorization-fails-without-context-path/40827993
   address: sso-client-a
+  servlet:
+    context-path: /
 # sso　认证配置
 oauth2-server: http://auth-server:80
 
